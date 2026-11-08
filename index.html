@@ -197,7 +197,7 @@ footer a{color:inherit}
           <li><span lang="tg">Тестҳо ва ҷавобҳо</span><span lang="ru">Тесты и ответы</span></li>
           <li><span lang="tg">Имтиҳони озмоишӣ</span><span lang="ru">Пробный экзамен</span></li>
         </ul>
-        <a class="btn ghost buy" data-plan="Мустақил (199 смн)" href="https://t.me/+8615201082991" target="_blank" rel="noopener"><span lang="tg">Интихоб</span><span lang="ru">Выбрать</span></a>
+        <a class="btn ghost buy" data-plan="Мустақил (199 смн)" href="https://t.me/chinaway_tj_bot" target="_blank" rel="noopener"><span lang="tg">Интихоб</span><span lang="ru">Выбрать</span></a>
       </div>
       <div class="plan best">
         <div class="tag"><span lang="tg">Тавсия медиҳем</span><span lang="ru">Рекомендуем</span></div>
@@ -210,7 +210,7 @@ footer a{color:inherit}
           <li><span lang="tg">Санҷиши вазифаи хонагӣ</span><span lang="ru">Проверка домашних заданий</span></li>
           <li><span lang="tg">Ислоҳи талаффуз аз рӯи паёмҳои овозӣ</span><span lang="ru">Разбор произношения по голосовым</span></li>
         </ul>
-        <a class="btn buy" data-plan="Бо дастгирӣ (499 смн)" href="https://t.me/+8615201082991" target="_blank" rel="noopener"><span lang="tg">Интихоб</span><span lang="ru">Выбрать</span></a>
+        <a class="btn buy" data-plan="Бо дастгирӣ (499 смн)" href="https://t.me/chinaway_tj_bot" target="_blank" rel="noopener"><span lang="tg">Интихоб</span><span lang="ru">Выбрать</span></a>
       </div>
       <div class="plan">
         <div class="tag"></div>
@@ -222,14 +222,14 @@ footer a{color:inherit}
           <li><span lang="tg">4 дарси инфиродии онлайн</span><span lang="ru">4 личных онлайн-занятия</span></li>
           <li><span lang="tg">Нақшаи шахсӣ барои HSK</span><span lang="ru">Персональный план подготовки к HSK</span></li>
         </ul>
-        <a class="btn ghost buy" data-plan="VIP (999 смн)" href="https://t.me/+8615201082991" target="_blank" rel="noopener"><span lang="tg">Интихоб</span><span lang="ru">Выбрать</span></a>
+        <a class="btn ghost buy" data-plan="VIP (999 смн)" href="https://t.me/chinaway_tj_bot" target="_blank" rel="noopener"><span lang="tg">Интихоб</span><span lang="ru">Выбрать</span></a>
       </div>
     </div>
 
     <div class="steps">
-      <div class="step"><p><span lang="tg">Тугмаи «Интихоб»-ро пахш кунед — чат бо мо кушода мешавад.</span><span lang="ru">Нажмите «Выбрать» — откроется чат с нами.</span></p></div>
+      <div class="step"><p><span lang="tg">Тугмаи «Интихоб»-ро пахш кунед — боти Telegram кушода мешавад.</span><span lang="ru">Нажмите «Выбрать» — откроется наш Telegram-бот.</span></p></div>
       <div class="step"><p><span lang="tg">Мо реквизитҳоро мефиристем: Алиф, Душанбе Сити, Эсхата ё Корти Миллӣ.</span><span lang="ru">Мы пришлём реквизиты: Алиф, Душанбе Сити, Эсхата или Корти Милли.</span></p></div>
-      <div class="step"><p><span lang="tg">Пас аз пардохт дастрасӣ ба курсро мегиред.</span><span lang="ru">После оплаты вы получаете доступ к курсу.</span></p></div>
+      <div class="step"><p><span lang="tg">Скриншоти чекро фиристед — бот курсро худаш мефиристад.</span><span lang="ru">Пришлите скриншот чека — бот сам пришлёт курс.</span></p></div>
     </div>
   </section>
 
@@ -249,6 +249,7 @@ footer a{color:inherit}
 <script>
 // Куда ведут кнопки «Выбрать». Когда появится Telegram, впишите username (без @):
 // например TELEGRAM = "chinaway_tj" — и кнопки откроют Telegram с готовым сообщением.
+var TELEGRAM_BOT = "chinaway_tj_bot";  // бот продаж: реквизиты, приём оплаты, выдача курса
 var TELEGRAM = "";
 // Пока нет username — ссылка по номеру телефона (работает, если в Telegram
 // «Конфиденциальность → Номер телефона → Кто может найти меня по номеру» = «Все»).
@@ -274,7 +275,9 @@ var INSTAGRAM = "chinaway.tj";
   });
   document.querySelectorAll("a.buy").forEach(function(a){
     var plan = a.getAttribute("data-plan");
-    if (TELEGRAM) {
+    if (TELEGRAM_BOT) {
+      a.href = "https://t.me/" + TELEGRAM_BOT + "?start=site";
+    } else if (TELEGRAM) {
       a.href = "https://t.me/" + TELEGRAM + "?text=" + encodeURIComponent("Салом! Мехоҳам курси ChinaWay-ро харам, тарифи " + plan + ".");
     } else if (TELEGRAM_PHONE) {
       a.href = "https://t.me/+" + TELEGRAM_PHONE;
