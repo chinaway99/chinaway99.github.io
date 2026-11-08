@@ -80,6 +80,13 @@ summary{font-weight:600;cursor:pointer}
 details p{color:var(--muted);margin-top:10px}
 footer{padding:32px 0;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
 footer a{color:inherit}
+.pick{position:fixed;inset:0;background:rgba(20,18,16,.55);display:grid;place-items:center;padding:16px;z-index:10}
+.pick[hidden]{display:none}
+.pick-box{background:var(--surface);border-radius:18px;padding:28px 24px;max-width:360px;width:100%;text-align:center}
+.pick-zh{font-size:56px;color:var(--accent);line-height:1}
+.pick-t{font-weight:800;font-size:20px;margin:12px 0 20px;line-height:1.3}
+.pick-t span{font-weight:600;font-size:16px;color:var(--muted)}
+.pick-row{display:grid;gap:10px}
 @media (max-width:760px){
   .hero{grid-template-columns:1fr;padding:40px 0}
   .grid,.price,.steps,.free{grid-template-columns:1fr}
@@ -97,13 +104,24 @@ footer a{color:inherit}
   </div>
 </div></header>
 
+<div id="pick" class="pick" hidden>
+  <div class="pick-box" role="dialog" aria-modal="true" aria-labelledby="pick-t">
+    <div class="zh pick-zh">你好</div>
+    <p id="pick-t" class="pick-t">Забонро интихоб кунед<br><span>Выберите язык</span></p>
+    <div class="pick-row">
+      <button type="button" class="btn" data-pick="tg">Тоҷикӣ</button>
+      <button type="button" class="btn ghost" data-pick="ru">Русский</button>
+    </div>
+  </div>
+</div>
+
 <main class="wrap">
   <div class="hero">
     <div>
       <h1><span lang="tg">Забони чинӣ аз сифр то HSK 1 дар 8 ҳафта</span><span lang="ru">Китайский с нуля до HSK 1 за 8 недель</span></h1>
       <p class="lead">
-        <span lang="tg">20 дарси фаҳмо: тонҳо, пиньин, иероглифҳо ва муколамаҳои зинда. Рӯзе 30 дақиқа кифоя аст. Шарҳи дарсҳо бо забони русӣ.</span>
-        <span lang="ru">20 понятных уроков: тоны, пиньинь, иероглифы и живые диалоги. Достаточно 30 минут в день. Объяснения — на русском языке.</span>
+        <span lang="tg">20 дарси фаҳмо: тонҳо, пиньин, иероглифҳо ва муколамаҳои зинда. Рӯзе 30 дақиқа кифоя аст. Дарсҳо бо забони тоҷикӣ ё русӣ — интихоб бо шумо.</span>
+        <span lang="ru">20 понятных уроков: тоны, пиньинь, иероглифы и живые диалоги. Достаточно 30 минут в день. Уроки на таджикском или русском — на ваш выбор.</span>
       </p>
       <div class="cta-row">
         <a class="btn" href="#price"><span lang="tg">Оғози таҳсил</span><span lang="ru">Начать обучение</span></a>
@@ -153,7 +171,7 @@ footer a{color:inherit}
       <div>
         <h2><span lang="tg">Дарси 1 — ройгон</span><span lang="ru">Урок 1 — бесплатно</span></h2>
         <p><span lang="tg">Садоҳои забони чинӣ, 4 тон ва аввалин калимаҳо. Санҷед, ки ба шумо маъқул аст ё не — бе пардохт.</span><span lang="ru">Звуки китайского, 4 тона и первые слова. Попробуйте, подходит ли вам курс, — без оплаты.</span></p>
-        <a class="btn" href="urok-01.pdf" download><span lang="tg">PDF-ро боргирӣ кунед</span><span lang="ru">Скачать PDF</span></a>
+        <a class="btn" lang="tg" href="urok-01-tj.pdf" download>PDF-ро боргирӣ кунед</a><a class="btn" lang="ru" href="urok-01.pdf" download>Скачать PDF</a>
       </div>
       <div class="tracks">
         <div class="track"><div><span lang="tg">1. Чор тон</span><span lang="ru">1. Четыре тона</span></div><audio controls preload="none" src="01_chetyre_tona.m4a"></audio></div>
@@ -174,7 +192,7 @@ footer a{color:inherit}
         <div class="cost">199 смн</div>
         <div class="usd">≈ $19</div>
         <ul>
-          <li><span lang="tg">20 дарс дар PDF</span><span lang="ru">20 уроков в PDF</span></li>
+          <li><span lang="tg">20 дарс дар PDF (тоҷикӣ ва русӣ)</span><span lang="ru">20 уроков в PDF (на таджикском и русском)</span></li>
           <li><span lang="tg">Аудио ва дафтари хатнависӣ</span><span lang="ru">Аудио и прописи</span></li>
           <li><span lang="tg">Тестҳо ва ҷавобҳо</span><span lang="ru">Тесты и ответы</span></li>
           <li><span lang="tg">Имтиҳони озмоишӣ</span><span lang="ru">Пробный экзамен</span></li>
@@ -218,7 +236,7 @@ footer a{color:inherit}
   <section>
     <h2><span lang="tg">Саволҳои зиёд додашаванда</span><span lang="ru">Частые вопросы</span></h2>
     <details><summary><span lang="tg">Ман ҳеҷ гоҳ забони чинӣ нахондаам. Ба ман мувофиқ аст?</span><span lang="ru">Я никогда не учил китайский. Мне подойдёт?</span></summary><p><span lang="tg">Ҳа, курс аз сифр сар мешавад — аз садоҳо ва тонҳо.</span><span lang="ru">Да, курс начинается с нуля — со звуков и тонов.</span></p></details>
-    <details><summary><span lang="tg">Шарҳҳо бо кадом забон?</span><span lang="ru">На каком языке объяснения?</span></summary><p><span lang="tg">Дарсҳо бо забони русӣ навишта шудаанд. Дар чат метавонед бо тоҷикӣ савол диҳед.</span><span lang="ru">Уроки написаны на русском. В чате можно задавать вопросы и на таджикском.</span></p></details>
+    <details><summary><span lang="tg">Шарҳҳо бо кадом забон?</span><span lang="ru">На каком языке объяснения?</span></summary><p><span lang="tg">Ҳар дарс ду версия дорад: тоҷикӣ ва русӣ. Дар боло «ТҶ» ё «RU»-ро пахш кунед — тамоми дарс бо ҳамон забон мешавад.</span><span lang="ru">У каждого урока две версии: таджикская и русская. Нажмите вверху «ТҶ» или «RU» — весь урок будет на этом языке.</span></p></details>
     <details><summary><span lang="tg">Дар як рӯз чанд вақт лозим аст?</span><span lang="ru">Сколько времени нужно в день?</span></summary><p><span lang="tg">30 дақиқа дар як рӯз, 2 дарс дар як ҳафта. Тамоми курс 8–10 ҳафта.</span><span lang="ru">30 минут в день, 2 урока в неделю. Весь курс — 8–10 недель.</span></p></details>
     <details><summary><span lang="tg">Дастрасиро чӣ тавр мегирам?</span><span lang="ru">Как я получу доступ?</span></summary><p><span lang="tg">Пас аз пардохт мо файлҳои курсро ба шумо мефиристем. Дар тарифи «Бо дастгирӣ» ва VIP — даъват ба гурӯҳи шогирдон ҳам.</span><span lang="ru">После оплаты мы пришлём вам файлы курса. В тарифах «С поддержкой» и VIP — ещё и приглашение в группу учеников.</span></p></details>
     <details><summary><span lang="tg">Аввал санҷидан мумкин?</span><span lang="ru">Можно сначала попробовать?</span></summary><p><span lang="tg">Ҳа — дарси 1 бо аудио ройгон аст. Онро дар боло боргирӣ кунед.</span><span lang="ru">Да — урок 1 с аудио бесплатный. Скачайте его выше на этой странице.</span></p></details>
@@ -244,7 +262,13 @@ var INSTAGRAM = "chinaway.tj";
     root.setAttribute("lang", l);
     try { localStorage.setItem("lang", l); } catch(e){}
   }
-  try { var saved = localStorage.getItem("lang"); if (saved === "ru" || saved === "tg") setLang(saved); } catch(e){}
+  var saved = null;
+  try { saved = localStorage.getItem("lang"); } catch(e){}
+  var pick = document.getElementById("pick");
+  if (saved === "ru" || saved === "tg") setLang(saved); else pick.hidden = false;
+  document.querySelectorAll("[data-pick]").forEach(function(b){
+    b.addEventListener("click", function(){ setLang(b.getAttribute("data-pick")); pick.hidden = true; });
+  });
   document.querySelectorAll(".langs button").forEach(function(b){
     b.addEventListener("click", function(){ setLang(b.getAttribute("data-set")); });
   });
