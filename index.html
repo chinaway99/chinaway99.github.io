@@ -92,15 +92,29 @@ footer a{color:inherit}
   .grid,.price,.steps,.free{grid-template-columns:1fr}
   .hero-card .big{font-size:72px}
 }
+.hdr-right{display:flex;align-items:center;gap:10px}
+.app-link{display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:14px;text-decoration:none;color:var(--accent);border:1px solid var(--line);border-radius:999px;padding:6px 12px}
+.app-promo{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;background:linear-gradient(140deg,#d61834,#a80c25 55%,#7a081c);color:#fff;border-radius:18px;padding:20px 22px;margin:8px 0 48px}
+.app-promo img{width:64px;height:64px;border-radius:16px;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.app-promo h3{font-size:20px;line-height:1.25;margin-bottom:4px}
+.app-promo p{color:rgba(255,255,255,.85);font-size:15px}
+.app-promo .btn{background:#fff;color:#a80c25;white-space:nowrap}
+@media (max-width:640px){.app-promo{grid-template-columns:auto 1fr}.app-promo .btn{grid-column:1/-1}}
 </style>
+<link rel="manifest" href="app/manifest.webmanifest">
+<link rel="apple-touch-icon" href="app/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="app/icons/favicon.png">
 </head>
 <body>
 
 <header><div class="wrap">
   <div class="logo"><span class="zh">中</span> ChinaWay</div>
+  <div class="hdr-right">
+  <a class="app-link" href="app/">📱 <span lang="tg">Барнома</span><span lang="ru">Приложение</span></a>
   <div class="langs" role="group" aria-label="Забон / Язык">
     <button type="button" data-set="tg">ТҶ</button>
     <button type="button" data-set="ru">RU</button>
+  </div>
   </div>
 </div></header>
 
@@ -134,6 +148,13 @@ footer a{color:inherit}
       <div class="tr"><span lang="tg">«Салом» — аввалин калимае, ки дар дарси 1 мегӯед</span><span lang="ru">«Привет» — первое, что вы скажете на 1-м уроке</span></div>
     </div>
   </div>
+
+  <a class="app-promo" href="app/" style="text-decoration:none">
+    <img src="app/icons/icon-192.png" alt="ChinaWay">
+    <div><h3><span lang="tg">Барномаи ChinaWay — дар телефони шумо</span><span lang="ru">Приложение ChinaWay — в вашем телефоне</span></h3>
+    <p><span lang="tg">Кортҳои калимаҳо, тестҳо, машқи оҳангҳо ва дарси ройгон. Барои Android ва iPhone.</span><span lang="ru">Карточки слов, тесты, тренажёр тонов и бесплатный урок. Для Android и iPhone.</span></p></div>
+    <span class="btn"><span lang="tg">Кушодан</span><span lang="ru">Открыть</span></span>
+  </a>
 
   <section>
     <h2><span lang="tg">Ин курс барои кист</span><span lang="ru">Для кого этот курс</span></h2>
@@ -200,7 +221,7 @@ footer a{color:inherit}
         <a class="btn" href="https://t.me/chinaway_tj_bot?start=hsk1" target="_blank" rel="noopener"><span lang="tg">Интихоб</span><span lang="ru">Выбрать</span></a>
       </div>
       <div class="plan">
-        <div class="tag"><span lang="tg">Дарсҳо ҳар рӯз илова мешаванд</span><span lang="ru">Уроки добавляются каждый день</span></div>
+        <div class="tag"><span lang="tg">Тайёр</span><span lang="ru">Готов</span></div>
         <h3>HSK 2</h3>
         <div class="cost"><span lang="tg">аз 249 смн</span><span lang="ru">от 249 смн</span></div>
         <div class="usd"><span lang="tg">HSK 2 — ибтидоӣ</span><span lang="ru">HSK 2 — базовый</span></div>
@@ -212,7 +233,7 @@ footer a{color:inherit}
         <a class="btn ghost" href="https://t.me/chinaway_tj_bot?start=hsk2" target="_blank" rel="noopener"><span lang="tg">Интихоб</span><span lang="ru">Выбрать</span></a>
       </div>
       <div class="plan">
-        <div class="tag"><span lang="tg">Дарсҳо ҳар рӯз илова мешаванд</span><span lang="ru">Уроки добавляются каждый день</span></div>
+        <div class="tag"><span lang="tg">Тайёр</span><span lang="ru">Готов</span></div>
         <h3>HSK 3</h3>
         <div class="cost"><span lang="tg">аз 299 смн</span><span lang="ru">от 299 смн</span></div>
         <div class="usd"><span lang="tg">HSK 3 — миёна</span><span lang="ru">HSK 3 — средний</span></div>
@@ -224,7 +245,7 @@ footer a{color:inherit}
         <a class="btn ghost" href="https://t.me/chinaway_tj_bot?start=hsk3" target="_blank" rel="noopener"><span lang="tg">Интихоб</span><span lang="ru">Выбрать</span></a>
       </div>
       <div class="plan">
-        <div class="tag"><span lang="tg">Дарсҳо ҳар рӯз илова мешаванд</span><span lang="ru">Уроки добавляются каждый день</span></div>
+        <div class="tag"><span lang="tg">Тайёр</span><span lang="ru">Готов</span></div>
         <h3>HSK 4</h3>
         <div class="cost"><span lang="tg">аз 399 смн</span><span lang="ru">от 399 смн</span></div>
         <div class="usd"><span lang="tg">HSK 4 — барои кор</span><span lang="ru">HSK 4 — для работы</span></div>
@@ -236,7 +257,7 @@ footer a{color:inherit}
         <a class="btn ghost" href="https://t.me/chinaway_tj_bot?start=hsk4" target="_blank" rel="noopener"><span lang="tg">Интихоб</span><span lang="ru">Выбрать</span></a>
       </div>
       <div class="plan">
-        <div class="tag"><span lang="tg">Дарсҳо ҳар рӯз илова мешаванд</span><span lang="ru">Уроки добавляются каждый день</span></div>
+        <div class="tag"><span lang="tg">Тайёр</span><span lang="ru">Готов</span></div>
         <h3>HSK 5</h3>
         <div class="cost"><span lang="tg">аз 499 смн</span><span lang="ru">от 499 смн</span></div>
         <div class="usd"><span lang="tg">HSK 5 — пешрафта</span><span lang="ru">HSK 5 — продвинутый</span></div>
@@ -248,7 +269,7 @@ footer a{color:inherit}
         <a class="btn ghost" href="https://t.me/chinaway_tj_bot?start=hsk5" target="_blank" rel="noopener"><span lang="tg">Интихоб</span><span lang="ru">Выбрать</span></a>
       </div>
       <div class="plan">
-        <div class="tag"><span lang="tg">Дарсҳо ҳар рӯз илова мешаванд</span><span lang="ru">Уроки добавляются каждый день</span></div>
+        <div class="tag"><span lang="tg">Тайёр</span><span lang="ru">Готов</span></div>
         <h3>HSK 6</h3>
         <div class="cost"><span lang="tg">аз 599 смн</span><span lang="ru">от 599 смн</span></div>
         <div class="usd"><span lang="tg">HSK 6 — озод</span><span lang="ru">HSK 6 — свободный</span></div>
