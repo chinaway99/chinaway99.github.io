@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="tg">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ChinaWay</title>
+<meta name="description" content="ChinaWay — курсҳои забони чинӣ HSK 1–6 бо забони тоҷикӣ ва русӣ.">
+<meta name="theme-color" content="#c8102e">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="ChinaWay">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icons/favicon.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div id="splash" aria-hidden="true">
+  <div class="splash-logo"><span class="zh">中</span></div>
+  <div class="splash-name">China<b>Way</b></div>
+</div>
+<div id="app">
+  <main id="view" tabindex="-1"></main>
+  <nav id="tabs" aria-label="Menu"></nav>
+</div>
+<div id="sheet-wrap" hidden><div class="sheet-bg" data-close></div><div class="sheet" role="dialog" aria-modal="true"></div></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

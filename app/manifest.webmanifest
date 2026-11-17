@@ -1,0 +1,23 @@
+{
+  "name": "ChinaWay — забони чинӣ",
+  "short_name": "ChinaWay",
+  "description": "Курсҳои забони чинӣ HSK 1–6 бо забони тоҷикӣ ва русӣ. Курсы китайского HSK 1–6 на таджикском и русском.",
+  "id": "/app/",
+  "start_url": "/app/?source=pwa",
+  "scope": "/app/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#b3112b",
+  "theme_color": "#c8102e",
+  "lang": "tg",
+  "categories": ["education"],
+  "icons": [
+    {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ],
+  "shortcuts": [
+    {"name": "Машқ / Тренировка", "url": "/app/#/practice", "icons": [{"src": "icons/icon-192.png", "sizes": "192x192"}]},
+    {"name": "Курсҳо / Курсы", "url": "/app/#/courses", "icons": [{"src": "icons/icon-192.png", "sizes": "192x192"}]}
+  ]
+}
